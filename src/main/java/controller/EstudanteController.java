@@ -37,12 +37,22 @@ public class EstudanteController {
         System.out.println("Estudante adicionado com sucesso!");
     }
 
-    public Estudante buscarEstudante(int nrMatricula) {
-        return estudanteDAO.buscar(nrMatricula);
+    public void buscarEstudante() {
+        System.out.print("Digite o numero de Matricula: ");
+        int nrMatricula = scanner.nextInt();
+        System.out.println(estudanteDAO.buscar(nrMatricula));
     }
 
-    public List<Estudante> listarEstudantes() {
-        return estudanteDAO.listar();
+    public void  listarEstudantes() {
+        //Usando o foreach
+        /*
+        for (Estudante estudante: estudanteDAO.listar()) {
+            System.out.println(estudante.toString());
+        }*/
+
+        //Usando o Lambda
+
+        estudanteDAO.listar().forEach(estudante -> System.out.println(estudante.toString()));
     }
 
     public void atualizarEstudante(Estudante estudante) {

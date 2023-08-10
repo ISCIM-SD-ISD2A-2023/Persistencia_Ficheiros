@@ -26,10 +26,10 @@ public class Main {
                         controller.adicionarEstudante();
                         break;
                     case 2:
-                        // Lógica para buscar um estudante
+                        controller.buscarEstudante();
                         break;
                     case 3:
-                        // Lógica para listar estudantes
+                        controller.listarEstudantes();
                         break;
                     case 4:
                         // Lógica para atualizar um estudante
