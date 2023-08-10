@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db1cb81d-5172-4a6f-8425-66a6ead202f3" name="Changes" comment="Primeiro Commit.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/Estudante.java" afterDir="false" />
+    <list default="true" id="db1cb81d-5172-4a6f-8425-66a6ead202f3" name="Changes" comment="Adicionei o model Estudante.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/EstudanteDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +62,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1691655710029</updated>
-      <workItem from="1691655712824" duration="269000" />
+      <workItem from="1691655712824" duration="685000" />
     </task>
     <task id="LOCAL-00001" summary="Primeiro Commit.">
       <created>1691655733123</created>
@@ -71,7 +71,14 @@
       <option name="project" value="LOCAL" />
       <updated>1691655733123</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Adicionei o model Estudante.">
+      <created>1691656004453</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1691656004453</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -91,6 +98,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Primeiro Commit." />
-    <option name="LAST_COMMIT_MESSAGE" value="Primeiro Commit." />
+    <MESSAGE value="Adicionei o model Estudante." />
+    <option name="LAST_COMMIT_MESSAGE" value="Adicionei o model Estudante." />
   </component>
 </project>
