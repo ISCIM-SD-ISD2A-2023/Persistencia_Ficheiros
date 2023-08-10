@@ -12,11 +12,7 @@ public class EstudanteDAO {
         List<Estudante> estudantes = listar();
         estudantes.add(estudante);
 
-        try (ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream(ARQUIVO_ESTUDANTES))) {
-            outputStream.writeObject(estudantes);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        salvarListaEstudantes(estudantes);
     }
 
     public Estudante buscar(int nrMatricula) {
@@ -32,12 +28,17 @@ public class EstudanteDAO {
     }
 
     public List<Estudante> listar() {
+        File file = new File(ARQUIVO_ESTUDANTES);
+        if (!file.exists()) {
+            criarArquivo();
+        }
+
         List<Estudante> estudantes = new ArrayList<>();
 
         try (ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream(ARQUIVO_ESTUDANTES))) {
             estudantes = (List<Estudante>) inputStream.readObject();
         } catch (IOException | ClassNotFoundException e) {
-            System.out.println("o arquivo ainda não existe ou ocorreu um erro na leitura");
+            System.out.println("Ocorreu um erro na leitura do arquivo.");
         }
 
         return estudantes;
@@ -69,7 +70,16 @@ public class EstudanteDAO {
         try (ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream(ARQUIVO_ESTUDANTES))) {
             outputStream.writeObject(estudantes);
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("Ocorreu um erro na gravação do arquivo.");
+        }
+    }
+
+    private void criarArquivo() {
+        try {
+            File file = new File(ARQUIVO_ESTUDANTES);
+            file.createNewFile();
+        } catch (IOException e) {
+            System.out.println("Ocorreu um erro na criação do arquivo.");
         }
     }
 }
