@@ -57,10 +57,41 @@ public class EstudanteController {
     //Vou adicionar um comentario so para explicar o commit
 
     public void atualizarEstudante(Estudante estudante) {
-        estudanteDAO.atualizar(estudante);
+        //Colocando as instrucoes a funcionar...
+        System.out.println("***************************************");
+        System.out.println("--------ATUALIZANDO--------");
+
+        System.out.print("Número de Matrícula do estudante: ");
+        int nrMatricula = scanner.nextInt();
+        System.out.println(estudanteDAO.buscar(nrMatricula));
+
+            scanner.nextLine();
+            System.out.print("Nome: ");
+            String nome = scanner.nextLine();
+
+            System.out.print("Apelido: ");
+            String apelido = scanner.nextLine();
+
+            System.out.print("Contacto: ");
+            String contacto = scanner.nextLine();
+
+            System.out.print("Endereço: ");
+            String endereco = scanner.nextLine();
+
+            Estudante estudante2 = new Estudante(nrMatricula, nome, apelido, contacto, endereco);
+            estudanteDAO.atualizar(estudante2);
+            System.out.println("Dados atualizados com sucesso!");
+            System.out.println("******************************");
     }
 
     public void removerEstudante(int nrMatricula) {
-        estudanteDAO.remover(nrMatricula);
+        //colocando as instrucoes a funcionar...
+        System.out.println("***************************************");
+        System.out.println("--------REMOVENDO--------");
+        System.out.println("Digite o numero de matricula");
+        int nrMatricula = scanner.nextInt();
+            estudanteDAO.remover(nrMatricula);
+            System.out.println("Dados removidos com sucesso!");
+        System.out.println("***************************************");
     }
 }
